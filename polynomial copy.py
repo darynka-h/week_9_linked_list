@@ -1,4 +1,22 @@
-from polynomial import 
+from polynomial import Mono, Polynomial
+
+# def sort(self):
+#     if self.head is None:
+#         return None
+#     parent = None
+#     if self.head is not None:
+#         probe = self.head
+#         while probe is not None and probe.next is not None:
+#             a, b, c = probe, probe.next, probe.next.next
+#             if a.degree > b.degree:
+#                 parent = a
+#             if a.degree < b.degree:
+#                 a.next = c
+#                 b.next = a
+#                 if parent:
+#                     parent.next = b
+#             probe = probe.next
+
 
 def test_polynomial():
     """
