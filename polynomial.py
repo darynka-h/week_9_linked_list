@@ -23,11 +23,11 @@ class Mono:
         """The function stringify str"""
         if self.degree == 1:
             return f"{'x' if self.coefficient == 1 else str(self.coefficient) + 'x'}"
-        elif self.degree == 0:
+        if self.degree == 0:
             return f"{'-' + str(self.coefficient) if self.coefficient < 0 else str(self.coefficient)}"
-        elif self.coefficient == 1:
+        if self.coefficient == 1:
             return f"x**{self.degree}"
-        elif self.coefficient == 0:
+        if self.coefficient == 0:
             return ''
         return f"{self.coefficient}x**{self.degree}"
 
@@ -92,7 +92,7 @@ class Polynomial:
             else:
                 result += f"{probe.stringify_pol()}"
             probe = probe.next
-        return result.replace("0-", "-").replace("--", "-")
+        return result.replace("0-", "-").replace("--", "-").replace("-1x", "-x")
 
     def __repr__(self) -> str:
         result = "Polynomial("
@@ -239,6 +239,7 @@ class Polynomial:
             probe_0.coefficient = probe_0.coefficient * (-1)
             probe_0 = probe_0.next
         return self + new_other_pol
+
 
 def test_polynomial():
     """
